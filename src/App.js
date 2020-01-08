@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Login from './components/Login';
+import { ProtectedRoute } from './components/PrivateRoute';
+import PaginaInicial from './components/PaginaInicial';
+import tableClientes from './components/tableClientes';
+import Perfil from './components/Perfil';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/Login' component={Login} />
+        <ProtectedRoute exact path='/PaginaInicial' component={PaginaInicial} />
+        <ProtectedRoute exact path='/tableClientes' component={tableClientes} />
+        <ProtectedRoute exact path='/Perfil' component={Perfil} />
+        <Route path="*" component={() => "Página não encontrada"} />
+      </Switch>
+    </Router>
   );
 }
 
-export default App;
+export default App;  
