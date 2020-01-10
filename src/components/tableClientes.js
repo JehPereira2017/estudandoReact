@@ -16,12 +16,14 @@ class tableClientes extends Component {
     }
     openModal = () => {
         this.setState({
+            ...this.state,
             isOpen: true
         });
         console.log(this.state, 'table')
     }
 
     render() {
+        console.log(this.state.isOpen,'render')
         return (
             <div>
                 <Menu props={this.props}/>
