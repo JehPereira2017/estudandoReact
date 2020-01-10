@@ -51,7 +51,7 @@ class tableClientes extends Component {
                             <td>Jacob</td>
                             <td>Thornton</td>
                             <td>
-                                <button type="button" onClick={this.openModal} className="btn btn-primary">Visualizar</button>
+                                <button type="button" onClick={e=>{this.openModal()}} className="btn btn-primary">Visualizar</button>
                                 <button type="button" className="btn btn-success">Editar</button>
                                 <button type="button" className="btn btn-danger">Excluir</button>
                             </td>
@@ -61,7 +61,7 @@ class tableClientes extends Component {
                             <td>Larry</td>
                             <td>the Bird</td>
                             <td>
-                                <button type="button" className="btn btn-primary">Visualizar</button>
+                                <button type="button" onClick={e=>{this.openModal()}} className="btn btn-primary">Visualizar</button>
                                 <button type="button" className="btn btn-success">Editar</button>
                                 <button type="button" className="btn btn-danger">Excluir</button>
                             </td>
